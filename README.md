@@ -1,6 +1,7 @@
 # ExportTable2csv
 
-TODO: Write a gem description
+using ActiveRecord export data to csv file.
+Separation Of Large data
 
 ## Installation
 
@@ -18,7 +19,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    active_record_config = {
+      :adapter  => "postgresql",
+      :encoding => "unicode",
+      :host     => "127.0.0.1",
+      :username => "pgsql",
+      :password => "none",
+      :database => "test"
+    }
+    class User < ActiveRecord::Base;end
+    export = ExportTable2csv::Export.new(
+      :active_record_config => active_record_config,
+      :model => GatewayRecord,
+      :fields => [:id,:user_id,:user_mobile,:tx_code],
+      :conditions => ["id > ?",'100'],
+      :order => 'id desc'
+    )
+    export.export_lines{|csv_row| p csv_row}
+    or
+    export.export_to_csv("/tmp/1111.csv")
+
 
 ## Contributing
 
