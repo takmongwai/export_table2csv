@@ -30,7 +30,7 @@ Or install it yourself as:
     class User < ActiveRecord::Base;end
     export = ExportTable2csv::Export.new(
       :active_record_config => active_record_config,
-      :model => GatewayRecord,
+      :model => User,
       :fields => [:id,:user_id,:user_mobile,:tx_code],
       :conditions => ["id > ?",'100'],
       :order => 'id desc'
