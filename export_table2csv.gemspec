@@ -4,8 +4,8 @@ require File.expand_path('../lib/export_table2csv/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["weidewang"]
   gem.email         = ["dewang.wei@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{导出数据表成csv文件}
+  gem.summary       = %q{导出数据表成csv文件}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
